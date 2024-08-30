@@ -1,0 +1,120 @@
+﻿@model CloudPart1.Models.CustomerProfile
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #4B0082; /* Dark purple background */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #2C2C2C; /* Darker shade for the form background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+            .form-container h2 {
+                margin-top: 0;
+                text-align: center;
+                font-size: 1.5em;
+                color: #FFD700; /* Gold color for headings */
+            }
+
+            .form-container input[type="text"],
+            .form-container input[type="email"],
+            .form-container input[type="file"],
+            .form-container button {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            .form-container input[type="text"],
+            .form-container input[type="email"],
+            .form-container input[type="file"] {
+                background-color: #444444; /* Dark grey input background */
+                color: white;
+            }
+
+            .form-container button {
+                background-color: #FFD700; /* Gold button */
+                color: #4B0082; /* Dark purple text */
+                cursor: pointer;
+            }
+
+                .form-container button:hover {
+                    background-color: #FFC107; /* Lighter gold on hover */
+                }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Professional Forms</title>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Upload Image</h2>
+        <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <button type="submit">Upload Image</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Add Customer Profile</h2>
+        <form asp-action="AddCustomerProfile" method="post">
+            <div class="form-group">
+                <input type="text" name="FirstName" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="LastName" placeholder="Last Name" />
+            </div>
+            <div class="form-group">
+                <input type="email" name="Email" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="PhoneNumber" placeholder="Phone Number" />
+            </div>
+            <button type="submit">Add Profile</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Process Order</h2>
+        <form asp-action="ProcessOrder" method="post">
+            <input type="text" name="orderId" placeholder="Order ID" />
+            <button type="submit">Process Order</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Upload Contract</h2>
+        <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <button type="submit">Upload Contract</button>
+        </form>
+    </div>
+
+</body>
+</html>
